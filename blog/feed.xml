@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pyor Blog</title>
+    <link>https://pyor.review/blog</link>
+    <atom:link href="https://pyor.review/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Notes from the pyor: on the review bottleneck, reviewing large and AI-generated PRs, and making code review fast again.</description>
+    <language>en</language>
+    <item>
+      <title>AI Writes Code Faster Than You Can Review It</title>
+      <link>https://pyor.review/blog/ai-writes-code-faster-than-you-can-review</link>
+      <guid isPermaLink="true">https://pyor.review/blog/ai-writes-code-faster-than-you-can-review</guid>
+      <pubDate>Sat, 20 Jun 2026 08:00:00 GMT</pubDate>
+      <description>Authoring got 50% faster; reviewing didn't. Why the AI code review bottleneck is structural, what it does to teams, and the three places to attack it.</description>
+      <author>hello@pyor.review (Othman Shareef)</author>
+    </item>
+    <item>
+      <title>GitHub PR Review Alternatives in 2026: An Honest Comparison</title>
+      <link>https://pyor.review/blog/github-pr-review-alternatives</link>
+      <guid isPermaLink="true">https://pyor.review/blog/github-pr-review-alternatives</guid>
+      <pubDate>Thu, 18 Jun 2026 08:00:00 GMT</pubDate>
+      <description>GitHub PR review alternatives compared honestly: Graphite's stacks, Stage's AI chapters, Pyor's native surface, or just pulling locally. Which fits your team?</description>
+      <author>hello@pyor.review (Othman Shareef)</author>
+    </item>
+    <item>
+      <title>Reviewing AI-Generated Code: A Practical Checklist</title>
+      <link>https://pyor.review/blog/reviewing-ai-generated-code</link>
+      <guid isPermaLink="true">https://pyor.review/blog/reviewing-ai-generated-code</guid>
+      <pubDate>Tue, 16 Jun 2026 08:00:00 GMT</pubDate>
+      <description>How to review AI-generated code: a practical checklist covering intent match, hallucinated APIs, untested edges, security surface, and testing the tests.</description>
+      <author>hello@pyor.review (Othman Shareef)</author>
+    </item>
+    <item>
+      <title>How Big Should a Pull Request Be?</title>
+      <link>https://pyor.review/blog/how-big-should-a-pull-request-be</link>
+      <guid isPermaLink="true">https://pyor.review/blog/how-big-should-a-pull-request-be</guid>
+      <pubDate>Sun, 14 Jun 2026 08:00:00 GMT</pubDate>
+      <description>The research-backed answer on pull request size: under ~400 changed lines, smaller is better. Where the number comes from, when to break it, how to split.</description>
+      <author>hello@pyor.review (Othman Shareef)</author>
+    </item>
+    <item>
+      <title>How to Review Large Pull Requests (Without Losing Your Mind)</title>
+      <link>https://pyor.review/blog/how-to-review-large-pull-requests</link>
+      <guid isPermaLink="true">https://pyor.review/blog/how-to-review-large-pull-requests</guid>
+      <pubDate>Fri, 12 Jun 2026 08:00:00 GMT</pubDate>
+      <description>A practical, step-by-step method for reviewing large pull requests: triage the files that matter, review in passes, and keep your place in a 40-file diff.</description>
+      <author>hello@pyor.review (Othman Shareef)</author>
+    </item>
+    <item>
+      <title>Why Are Pull Requests So Hard to Review?</title>
+      <link>https://pyor.review/blog/why-are-pull-requests-so-hard-to-review</link>
+      <guid isPermaLink="true">https://pyor.review/blog/why-are-pull-requests-so-hard-to-review</guid>
+      <pubDate>Wed, 10 Jun 2026 08:00:00 GMT</pubDate>
+      <description>Pull request review is slow because reading code is harder than writing it, and the tools make it worse. The four real causes, and what actually helps.</description>
+      <author>hello@pyor.review (Othman Shareef)</author>
+    </item>
+  </channel>
+</rss>

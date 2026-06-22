@@ -1,0 +1,216 @@
+    /* The Tailwind config below scopes utilities via `.shadcn-root .foo`,
+       so .font-sans on the root itself doesn't match. Force Geist on every
+       descendant directly. */
+    .shadcn-root, .shadcn-root * {
+      font-family: "Geist", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    }
+    .shadcn-root .font-mono, .shadcn-root code, .shadcn-root kbd {
+      font-family: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    }
+
+    /* ──────────────────────────────────────────────────────────────
+       Shadcn dark-mode override layer.
+       Tailwind play CDN compiles utilities with `important: '.shadcn-root'`
+       so every utility is already !important — these overrides must be too.
+       Maps the zinc/white tokens used across shadcn-app.jsx + screen-shadcn.jsx
+       to a coherent dark zinc palette. Semantic colors (red/emerald/amber/blue)
+       are remapped to darker, less-saturated tints suited for dark surfaces.
+       ────────────────────────────────────────────────────────────── */
+
+    body.dark .shadcn-root,
+    body.dark .shadcn-root * { border-color: #27272a; }
+    body.dark .shadcn-root ::selection { background: rgba(90,169,255,0.35); }
+    body.dark .shadcn-root ::placeholder { color: #71717a !important; }
+
+    /* —— Backgrounds: zinc neutral —— */
+    body.dark .shadcn-root .bg-white            { background-color: #18181b !important; }
+    body.dark .shadcn-root .bg-white\/40        { background-color: rgba(39,39,42,0.4) !important; }
+    body.dark .shadcn-root .bg-white\/60        { background-color: rgba(39,39,42,0.6) !important; }
+    body.dark .shadcn-root .bg-white\/70        { background-color: rgba(39,39,42,0.7) !important; }
+    body.dark .shadcn-root .bg-zinc-50          { background-color: #09090b !important; }
+    body.dark .shadcn-root .bg-zinc-50\/40      { background-color: rgba(9,9,11,0.4) !important; }
+    body.dark .shadcn-root .bg-zinc-50\/50      { background-color: rgba(9,9,11,0.55) !important; }
+    body.dark .shadcn-root .bg-zinc-50\/60      { background-color: rgba(9,9,11,0.6) !important; }
+    body.dark .shadcn-root .bg-zinc-50\/80      { background-color: rgba(9,9,11,0.8) !important; }
+    body.dark .shadcn-root .bg-zinc-50\/95      { background-color: rgba(9,9,11,0.95) !important; }
+    body.dark .shadcn-root .bg-zinc-100         { background-color: #27272a !important; }
+    body.dark .shadcn-root .bg-zinc-100\/60     { background-color: rgba(39,39,42,0.6) !important; }
+    body.dark .shadcn-root .bg-zinc-100\/70     { background-color: rgba(39,39,42,0.7) !important; }
+    body.dark .shadcn-root .bg-zinc-200         { background-color: #3f3f46 !important; }
+    body.dark .shadcn-root .bg-zinc-200\/60     { background-color: rgba(63,63,70,0.55) !important; }
+    body.dark .shadcn-root .bg-zinc-200\/70     { background-color: rgba(63,63,70,0.7) !important; }
+    body.dark .shadcn-root .bg-zinc-300         { background-color: #52525b !important; }
+    body.dark .shadcn-root .bg-zinc-400         { background-color: #71717a !important; }
+    /* zinc-800/900 flip — used for primary buttons, badges, checkboxes —
+       become near-white so contrast stays high in dark mode. */
+    body.dark .shadcn-root .bg-zinc-800         { background-color: #d4d4d8 !important; }
+    body.dark .shadcn-root .bg-zinc-900         { background-color: #fafafa !important; }
+
+    /* —— Text: zinc neutral —— */
+    body.dark .shadcn-root .text-zinc-50        { color: #18181b !important; } /* inverse */
+    body.dark .shadcn-root .text-zinc-300       { color: #52525b !important; }
+    body.dark .shadcn-root .text-zinc-400       { color: #71717a !important; }
+    body.dark .shadcn-root .text-zinc-500       { color: #a1a1aa !important; }
+    body.dark .shadcn-root .text-zinc-600       { color: #a1a1aa !important; }
+    body.dark .shadcn-root .text-zinc-700       { color: #d4d4d8 !important; }
+    body.dark .shadcn-root .text-zinc-800       { color: #e4e4e7 !important; }
+    body.dark .shadcn-root .text-zinc-900       { color: #fafafa !important; }
+    body.dark .shadcn-root .text-zinc-950       { color: #fafafa !important; }
+    /* text-white stays #fff — it's used inside saturated semantic bgs */
+
+    /* Syntax-highlight tokens in GhCodeBlock (Sx tones) — brighten for dark.
+       Identifiers (zinc-800) handled above. These are the remaining accents. */
+    body.dark .shadcn-root .text-pink-600       { color: #f472b6 !important; } /* keyword */
+    body.dark .shadcn-root .text-violet-600     { color: #c4b5fd !important; } /* function */
+    body.dark .shadcn-root .text-orange-600     { color: #fdba74 !important; } /* attribute */
+
+    /* Hover variants — match hover backgrounds too */
+    body.dark .shadcn-root .hover\:bg-zinc-50:hover  { background-color: #18181b !important; }
+    body.dark .shadcn-root .hover\:bg-zinc-100:hover { background-color: #27272a !important; }
+    body.dark .shadcn-root .hover\:bg-zinc-200:hover { background-color: #3f3f46 !important; }
+    body.dark .shadcn-root .hover\:bg-zinc-800:hover { background-color: #e4e4e7 !important; }
+    body.dark .shadcn-root .hover\:text-zinc-900:hover { color: #fafafa !important; }
+    body.dark .shadcn-root .focus-within\:ring-zinc-900:focus-within { --tw-ring-color: #fafafa !important; }
+
+    /* —— Borders —— */
+    body.dark .shadcn-root .border-zinc-100     { border-color: #27272a !important; }
+    body.dark .shadcn-root .border-zinc-200     { border-color: #27272a !important; }
+    body.dark .shadcn-root .border-zinc-200\/60 { border-color: rgba(39,39,42,0.6) !important; }
+    body.dark .shadcn-root .border-zinc-200\/80 { border-color: rgba(39,39,42,0.8) !important; }
+    body.dark .shadcn-root .border-zinc-300     { border-color: #3f3f46 !important; }
+    body.dark .shadcn-root .border-zinc-900     { border-color: #fafafa !important; }
+    body.dark .shadcn-root .divide-zinc-200 > * + * { border-color: #27272a !important; }
+
+    /* Tailwind border default with no color (just `border` class) — use border-zinc-200 dark */
+    body.dark .shadcn-root .border { border-color: #27272a; }
+
+    /* —— Rings —— */
+    body.dark .shadcn-root .ring-black\/15      { --tw-ring-color: rgba(0,0,0,0.55) !important; box-shadow: 0 0 0 0.5px rgba(0,0,0,0.55), 0 24px 60px rgba(0,0,0,0.6), 0 6px 14px rgba(0,0,0,0.3) !important; }
+    body.dark .shadcn-root .ring-white          { --tw-ring-color: #18181b !important; }
+    body.dark .shadcn-root .ring-zinc-50        { --tw-ring-color: #09090b !important; }
+    body.dark .shadcn-root .ring-zinc-200       { --tw-ring-color: #27272a !important; }
+    body.dark .shadcn-root .ring-zinc-900       { --tw-ring-color: #fafafa !important; }
+    body.dark .shadcn-root .ring-zinc-900\/10   { --tw-ring-color: rgba(250,250,250,0.10) !important; }
+    body.dark .shadcn-root .ring-zinc-900\/15   { --tw-ring-color: rgba(250,250,250,0.15) !important; }
+
+    /* —— Semantic: emerald —— */
+    body.dark .shadcn-root .bg-emerald-50,
+    body.dark .shadcn-root .bg-emerald-50\/30,
+    body.dark .shadcn-root .bg-emerald-50\/50,
+    body.dark .shadcn-root .bg-emerald-50\/60,
+    body.dark .shadcn-root .bg-emerald-50\/70   { background-color: rgba(16,185,129,0.12) !important; }
+    body.dark .shadcn-root .bg-emerald-100,
+    body.dark .shadcn-root .bg-emerald-100\/70  { background-color: rgba(16,185,129,0.18) !important; }
+    body.dark .shadcn-root .bg-emerald-500      { background-color: #10b981 !important; }
+    body.dark .shadcn-root .text-emerald-600    { color: #34d399 !important; }
+    body.dark .shadcn-root .text-emerald-700    { color: #34d399 !important; }
+    body.dark .shadcn-root .text-emerald-900    { color: #6ee7b7 !important; }
+    body.dark .shadcn-root .border-emerald-200  { border-color: rgba(16,185,129,0.35) !important; }
+    body.dark .shadcn-root .border-emerald-500  { border-color: #10b981 !important; }
+    body.dark .shadcn-root .ring-emerald-500\/20{ --tw-ring-color: rgba(16,185,129,0.25) !important; }
+
+    /* —— Semantic: red —— */
+    body.dark .shadcn-root .bg-red-50,
+    body.dark .shadcn-root .bg-red-50\/30,
+    body.dark .shadcn-root .bg-red-50\/50,
+    body.dark .shadcn-root .bg-red-50\/60,
+    body.dark .shadcn-root .bg-red-50\/70       { background-color: rgba(239,68,68,0.12) !important; }
+    body.dark .shadcn-root .bg-red-100\/70      { background-color: rgba(239,68,68,0.18) !important; }
+    body.dark .shadcn-root .bg-red-500          { background-color: #ef4444 !important; }
+    body.dark .shadcn-root .bg-red-600          { background-color: #dc2626 !important; }
+    body.dark .shadcn-root .bg-red-600\/90      { background-color: rgba(220,38,38,0.92) !important; }
+    body.dark .shadcn-root .text-red-500        { color: #f87171 !important; }
+    body.dark .shadcn-root .text-red-600        { color: #f87171 !important; }
+    body.dark .shadcn-root .text-red-700        { color: #f87171 !important; }
+    body.dark .shadcn-root .text-red-900        { color: #fca5a5 !important; }
+    body.dark .shadcn-root .border-red-200      { border-color: rgba(239,68,68,0.35) !important; }
+    body.dark .shadcn-root .border-red-500      { border-color: #ef4444 !important; }
+    body.dark .shadcn-root .ring-red-500\/20    { --tw-ring-color: rgba(239,68,68,0.25) !important; }
+    body.dark .shadcn-root .hover\:bg-zinc-800:hover { background-color: #e4e4e7 !important; }
+
+    /* —— Semantic: amber —— */
+    body.dark .shadcn-root .bg-amber-50,
+    body.dark .shadcn-root .bg-amber-50\/30,
+    body.dark .shadcn-root .bg-amber-50\/50,
+    body.dark .shadcn-root .bg-amber-50\/60     { background-color: rgba(245,158,11,0.12) !important; }
+    body.dark .shadcn-root .bg-amber-50\/70     { background-color: rgba(245,158,11,0.12) !important; }
+    body.dark .shadcn-root .bg-amber-100        { background-color: rgba(245,158,11,0.20) !important; }
+    body.dark .shadcn-root .bg-amber-300        { background-color: #f59e0b !important; }
+    body.dark .shadcn-root .bg-amber-500        { background-color: #f59e0b !important; }
+    body.dark .shadcn-root .text-amber-600      { color: #fbbf24 !important; }
+    body.dark .shadcn-root .text-amber-700      { color: #fbbf24 !important; }
+    body.dark .shadcn-root .text-amber-700\/70  { color: rgba(251,191,36,0.75) !important; }
+    body.dark .shadcn-root .text-amber-900      { color: #fcd34d !important; }
+    body.dark .shadcn-root .border-amber-200    { border-color: rgba(245,158,11,0.35) !important; }
+    body.dark .shadcn-root .border-amber-200\/50{ border-color: rgba(245,158,11,0.28) !important; }
+    body.dark .shadcn-root .border-amber-300,
+    body.dark .shadcn-root .border-amber-300\/70{ border-color: rgba(245,158,11,0.45) !important; }
+    body.dark .shadcn-root .border-amber-400    { border-color: rgba(245,158,11,0.65) !important; }
+    body.dark .shadcn-root .ring-amber-500      { --tw-ring-color: #f59e0b !important; }
+
+    /* —— Semantic: rose (live-diff removed line) —— */
+    body.dark .shadcn-root .bg-rose-50          { background-color: rgba(244,63,94,0.14) !important; }
+    body.dark .shadcn-root .text-rose-900       { color: #fda4af !important; }
+
+    /* —— Semantic: blue —— */
+    body.dark .shadcn-root .bg-blue-50\/30,
+    body.dark .shadcn-root .bg-blue-50\/40,
+    body.dark .shadcn-root .bg-blue-50\/60      { background-color: rgba(59,130,246,0.12) !important; }
+    body.dark .shadcn-root .bg-blue-600         { background-color: #3b82f6 !important; }
+    body.dark .shadcn-root .text-blue-600       { color: #60a5fa !important; }
+
+    /* —— Black overlay — keep as is (already dark) but loosen for legibility —— */
+    body.dark .shadcn-root .bg-black\/30        { background-color: rgba(0,0,0,0.65) !important; }
+
+    /* Outer window ring/shadow — re-do via boxShadow on the shell wrapper */
+    body.dark .shadcn-root .ring-1.ring-black\/15 {
+      box-shadow:
+        0 0 0 0.5px rgba(255,255,255,0.10),
+        0 24px 60px rgba(0,0,0,0.6),
+        0 6px 14px rgba(0,0,0,0.35) !important;
+      --tw-ring-shadow: 0 0 #0000 !important;
+      --tw-shadow: 0 0 #0000 !important;
+    }
+    /* Subtle shadow-sm/shadow on cards — flatten in dark, otherwise the
+       light shadow reads as a glow on a dark surface. */
+    body.dark .shadcn-root .shadow-sm           { box-shadow: 0 1px 0 rgba(0,0,0,0.4) !important; }
+
+    /* Diff add/del rows in PR detail — these come through utilities elsewhere
+       but the screen-files also uses inline styles; for any zinc-50 diff
+       gutters or similar the rules above already apply. */
+
+    /* ──────────────────────────────────────────────────────────────
+       Comments dashboard (comments-inbox.jsx) — opacity-variant utility
+       classes that had no dark entry above and were washing out light
+       over the dark feed: page/feed bg, sticky date strip, row hover,
+       unread tint, active refine pills/toggle, reply-quote.
+       ────────────────────────────────────────────────────────────── */
+    /* Feed + pagination surface (bg-zinc-50/30) — sit just under the card */
+    body.dark .shadcn-root .bg-zinc-50\/30      { background-color: rgba(9,9,11,0.5) !important; }
+    /* Reply-quote block (bg-zinc-50/70) */
+    body.dark .shadcn-root .bg-zinc-50\/70      { background-color: rgba(9,9,11,0.7) !important; }
+    /* Sticky activity-group date strip (bg-white/85) — frosted bar, slight lift */
+    body.dark .shadcn-root .bg-white\/85        { background-color: rgba(24,24,27,0.85) !important; }
+    /* Row hover (hover:bg-zinc-50/40) — must read against #18181b feed */
+    body.dark .shadcn-root .hover\:bg-zinc-50\/40:hover { background-color: rgba(63,63,70,0.32) !important; }
+
+    /* Unread row tint (bg-blue-50/20) + the left accent bar */
+    body.dark .shadcn-root .bg-blue-50\/20      { background-color: rgba(59,130,246,0.10) !important; }
+    body.dark .shadcn-root .bg-blue-500\/80     { background-color: rgba(96,165,250,0.85) !important; }
+
+    /* Active refine pills + toggle (blue accent) */
+    body.dark .shadcn-root .bg-blue-50          { background-color: rgba(59,130,246,0.16) !important; }
+    body.dark .shadcn-root .text-blue-700       { color: #93c5fd !important; }
+    body.dark .shadcn-root .text-blue-500       { color: #60a5fa !important; }
+    body.dark .shadcn-root .text-blue-400       { color: rgba(96,165,250,0.8) !important; }
+    body.dark .shadcn-root .text-blue-300       { color: rgba(96,165,250,0.55) !important; }
+    body.dark .shadcn-root .border-blue-600\/40 { border-color: rgba(96,165,250,0.45) !important; }
+    body.dark .shadcn-root .border-blue-200     { border-color: rgba(59,130,246,0.35) !important; }
+
+    /* Diff-expander hover affordance inside the anchored diff slice */
+    body.dark .shadcn-root .bg-blue-50\/60,
+    body.dark .shadcn-root .bg-blue-50\/70      { background-color: rgba(59,130,246,0.12) !important; }
+    body.dark .shadcn-root .bg-blue-100\/70,
+    body.dark .shadcn-root .hover\:bg-blue-100\/70:hover { background-color: rgba(59,130,246,0.20) !important; }
+    body.dark .shadcn-root .hover\:bg-blue-50\/70:hover { background-color: rgba(59,130,246,0.10) !important; }
+    body.dark .shadcn-root .ring-amber-300\/70  { --tw-ring-color: rgba(245,158,11,0.5) !important; }

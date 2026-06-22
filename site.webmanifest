@@ -1,0 +1,16 @@
+{
+  "name": "Pier — The native home for GitHub code review",
+  "short_name": "Pier",
+  "description": "Read, comment, approve, and merge GitHub pull requests in a fast, native app. Your code never leaves your machine.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0c0d",
+  "theme_color": "#0a0c0d",
+  "categories": ["developer", "productivity"],
+  "icons": [
+    { "src": "/brand/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/brand/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/brand/icon-192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/brand/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

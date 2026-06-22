@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Pier · embed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; background: #f4f4f5; }
+    body.dark { background: #09090b; }
+    #root { width: 100%; height: 100%; }
+    .scale-wrap { transform-origin: top left; }
+  </style>
+  <!-- Geist on .shadcn-root + the shadcn dark-mode override layer (extracted
+       from Pier.html). Applies when <body> has .dark.
+       NOTE: asset paths are ROOT-ABSOLUTE (/embed/...) because this document
+       lives at /embed/board/index.html — served at /embed/board/ on every host.
+       (It used to be /embed/landing-embed.html, but Vercel's cleanUrls 404s an
+       explicit .html URL; a folder index works on both Vercel and Pages.) -->
+  <link rel="stylesheet" href="/embed/shadcn-dark.css">
+
+  <!-- Vendored locally (no CDN at runtime). React + Tailwind only — the
+       artboards are PRECOMPILED to compiled/*.js, so no @babel/standalone. -->
+  <script src="/embed/vendor/react.js"></script>
+  <script src="/embed/vendor/react-dom.js"></script>
+  <script src="/embed/vendor/tailwind.js"></script>
+  <script>
+    // The shadcn redesign scopes every utility under .shadcn-root (the screens
+    // self-wrap in it) and uses Geist. Mirrors Pier.html's design canvas setup.
+    tailwind.config = {
+      important: '.shadcn-root',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Geist', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+            mono: ['"Geist Mono"', 'ui-monospace', 'SF Mono', 'Menlo', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Precompiled artboard modules (scripts/build-embed.mjs), same set + order
+       Pier.html loads. Plain scripts → top-level decls are global, exactly as
+       the original text/babel tags. _boot.js renders, so it runs last. -->
+  <script src="/embed/compiled/chrome.js"></script>
+  <script src="/embed/compiled/screen-shadcn.js"></script>
+  <script src="/embed/compiled/screen-shell.js"></script>
+  <script src="/embed/compiled/shadcn-ui.js"></script>
+  <script src="/embed/compiled/gh-comments.js"></script>
+  <script src="/embed/compiled/inbox-comments.js"></script>
+  <script src="/embed/compiled/shadcn-app.js"></script>
+  <script src="/embed/compiled/comments-inbox.js"></script>
+  <script src="/embed/compiled/screen-team.js"></script>
+  <script src="/embed/compiled/screen-team-radar.js"></script>
+  <script src="/embed/compiled/screen-loading-states.js"></script>
+  <script src="/embed/compiled/screen-pr-actions.js"></script>
+  <script src="/embed/compiled/_boot.js"></script>
+</body>
+</html>

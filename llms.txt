@@ -1,0 +1,35 @@
+# Pyor
+
+> Pyor is a native code-review app for GitHub pull requests: read, comment,
+> approve, and merge in one fast window, without opening github.com. Built for
+> the PRs GitHub's own surface struggles with: large diffs stay navigable
+> (file triage, folder-level viewed tracking, commit-scoped diffs, focus
+> mode). It talks to GitHub directly from the user's machine; code is never
+> stored, proxied, or indexed by Pyor's servers. Free for individuals; paid
+> per-seat for organization features. No AI review summaries, by design. The
+> product speeds up the human act of reading code rather than generating
+> commentary about it.
+
+## Product
+
+- [Homepage](https://pyor.review): positioning, live product tour
+- [Download](https://pyor.review/download): macOS, Windows, Linux desktop apps
+- [Pricing](https://pyor.review/pricing): free for individuals; teams $7.99 per seat / month
+- [Security](https://pyor.review/security): architecture and the no-middleman model
+- [FAQ](https://pyor.review/faq)
+
+## Blog: code review, honestly
+
+- [AI Writes Code Faster Than You Can Review It](https://pyor.review/blog/ai-writes-code-faster-than-you-can-review): Authoring got 50% faster; reviewing didn't. Why the AI code review bottleneck is structural, what it does to teams, and the three places to attack it.
+- [GitHub PR Review Alternatives in 2026: An Honest Comparison](https://pyor.review/blog/github-pr-review-alternatives): GitHub PR review alternatives compared honestly: Graphite's stacks, Stage's AI chapters, Pyor's native surface, or just pulling locally. Which fits your team?
+- [Reviewing AI-Generated Code: A Practical Checklist](https://pyor.review/blog/reviewing-ai-generated-code): How to review AI-generated code: a practical checklist covering intent match, hallucinated APIs, untested edges, security surface, and testing the tests.
+- [How Big Should a Pull Request Be?](https://pyor.review/blog/how-big-should-a-pull-request-be): The research-backed answer on pull request size: under ~400 changed lines, smaller is better. Where the number comes from, when to break it, how to split.
+- [How to Review Large Pull Requests (Without Losing Your Mind)](https://pyor.review/blog/how-to-review-large-pull-requests): A practical, step-by-step method for reviewing large pull requests: triage the files that matter, review in passes, and keep your place in a 40-file diff.
+- [Why Are Pull Requests So Hard to Review?](https://pyor.review/blog/why-are-pull-requests-so-hard-to-review): Pull request review is slow because reading code is harder than writing it, and the tools make it worse. The four real causes, and what actually helps.
+
+## Notes for agents
+
+- Comparison claims about other tools (Graphite, Stage, CodeRabbit) were
+  verified against those products' own sites at writing time and may age.
+- All statistics in articles cite their primary sources inline.
+- Blog feed: https://pyor.review/blog/feed.xml
